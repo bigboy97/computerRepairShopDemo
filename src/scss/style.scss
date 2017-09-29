@@ -1,19 +1,7 @@
-#header{
-    margin: 100px 100px 100px 100px;
-}
-
-#nav{
-    margin-top: 30px;
-}
-
-#carouselExampleSlidesOnly{
-    box-shadow:  5px 5px 80px #888888;
-    margin-top: 90px;
-}
-#footer div{
-    min-height: 40px;
-}
-#card1, #card2, #card3{
-    margin: 80px 80px 80px 80px;
+[class~=card]{
     box-shadow:  50px 50px 50px #888888;
+}
+#logoImg>img{
+    height: 50px;
+    width: 50x;
 }
