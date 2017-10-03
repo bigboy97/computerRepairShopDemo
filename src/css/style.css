@@ -1,6 +1,9 @@
 [class~=card] {
   box-shadow: 50px 50px 50px #888888; }
 
+body {
+  position: relative; }
+
 #logoImg > img {
   height: 50px;
   width: 50x; }

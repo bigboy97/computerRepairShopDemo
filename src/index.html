@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Fast Repairs</title>
   <!-- BOOTSTRAP 4 BATA SYLESHEETS -->
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" hreef="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <!-- CUSTOM STYLE SHEETS-->
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+
+<body data-spy="scroll" data-target="#nav">
   <!-- THIS PAGE IS BUILD USING A BOOT STRAP FLEXT BOX -->
   <div class="container-fluid">
     <!-- BELOW THIS COMMENT IS THE NAVIGATION BAR FOR THIS CITE -->
@@ -21,47 +25,71 @@
         </figure>
         <nav>
           <ul class="nav my-5 nav-tabs justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link active" href="#Home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-muted" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-muted" href="#">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-muted" href="#">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-muted" href="#">FAQs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-muted" href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
-      </div><!-- ENDING COL DIV -->
-    </div><!-- ENDING ROW DIV (NAV)-->
+            <li class="nav-item">
+              <a class="nav-link active" href="#Home">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Me</a>
+                <a class="dropdown-item" href="#">Company</a>
+                <a class="dropdown-item" href="#">Public Relations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- ENDING COL DIV -->
+    </div>
+    <!-- ENDING ROW DIV (NAV)-->
     <!-- END OF NAVIGATION SECTION OF THE WEB PAGE -->
     <!-- BELOW THIS COMMMENT STARTS THE HEADER OF THE WEBSITE -->
     <div class="row">
       <div class="col">
         <div id="mainCarousel" class="carousel slide border border-dark rounded" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#mainCarousel" data-slide-to="1"></li>
+          <li data-target="#mainCarousel" data-slide-to="2"></li>
+          </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" style="width: 100%; height: 700px;" src="https://images.pexels.com/photos/140945/pexels-photo-140945.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="man at computer">
+              <img class="d-block w-100" src="images/manAtComputer.gif" alt="man sitting at a computer">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" style="width: 100%; height: 700px;"  src="https://images.pexels.com/photos/297755/pexels-photo-297755.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="working at a desk">
+              <img class="d-block w-100" src="images/womanAnsweringPhone.gif" alt="woman answering a phone at her desk">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" style="width: 100%; height: 700px;"  src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="code">
-            </div><!-- END CAROUSEL ITEM -->
-          </div><!-- END CAROUSEL INNER -->
-        </div><!-- END CLASS CAROUSEL SLIDE -->
-      </div><!-- END COL -->
-    </div><!-- END ROW (CAROUSEL)-->
+              <img class="d-block w-100" src="images/workingOnComponet.gif" alt="somone working on a computer mother board">
+            </div>
+            <!-- END CAROUSEL ITEM -->
+            <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- END CAROUSEL INNER -->
+        </div>
+        <!-- END CLASS CAROUSEL SLIDE -->
+      </div>
+      <!-- END COL -->
+    </div>
+    <!-- END ROW (CAROUSEL)-->
     <!-- THIS IS THE PLAIN TEXT PORTION OF THE SITE BELLOW THIS COMMENT-->
     <div class="row my-5">
       <div class="col">
@@ -69,14 +97,18 @@
           <div class="text-center">
             <h1>Welcome To Fast Repairs!</h1>
             <p>We offer services that will fit all your computer related needs!</p>
-          </div> <!-- END CLASS TEXT CENTER -->
-        </header><!-- END HEADER -->
-      </div><!-- END COL -->
+          </div>
+          <!-- END CLASS TEXT CENTER -->
+        </header>
+        <!-- END HEADER -->
+      </div>
+      <!-- END COL -->
       <div class="col col-lg-7 mt-5 bg-primary" id="blueBar">
       </div>
-    </div><!-- END ROW (HEADER)-->
-  <!-- BELLOW THIS COMMENT STARTS THE CARDS -->
-  <div class="row">
+    </div>
+    <!-- END ROW (HEADER)-->
+    <!-- BELLOW THIS COMMENT STARTS THE CARDS -->
+    <div class="row">
       <div class="col">
         <div class="card my-5">
           <img class="card-img-top" src="images/laptopDesk.gif" alt="Laptop on desk">
@@ -84,9 +116,12 @@
             <h4 class="card-title">24 Hour Care</h4>
             <p class="card-text">Take the worry out of your day with 25hour phone care service.</p>
             <a href="#" class="btn btn-primary">Check it out!</a>
-          </div><!-- END CARD BODY -->
-        </div><!-- END CARD -->
-      </div><!-- END COL -->
+          </div>
+          <!-- END CARD BODY -->
+        </div>
+        <!-- END CARD -->
+      </div>
+      <!-- END COL -->
       <div class="col">
         <div class="card my-5">
           <img class="card-img-top" src="images/clutterDesk.gif" alt="Desk Clutter">
@@ -94,9 +129,12 @@
             <h4 class="card-title">Orginzation</h4>
             <p class="card-text">Do you have trubble staying orgonized?</p>
             <a href="#" class="btn btn-primary">Look at our walk-in lessons!</a>
-          </div><!-- END CARD BODY -->
-        </div><!-- END CARD -->
-      </div><!-- END COL -->
+          </div>
+          <!-- END CARD BODY -->
+        </div>
+        <!-- END CARD -->
+      </div>
+      <!-- END COL -->
       <div class="col my-5">
         <div class="card">
           <img class="card-img-top" src="images/mac.gif" alt="Mac Computer">
@@ -104,30 +142,40 @@
             <h4 class="card-title">Software Installations</h4>
             <p class="card-text">Need a software package on your computer, but are unable to configure it.</p>
             <a href="#" class="btn btn-primary">Check out our online tutorals!</a>
-          </div><!-- END CARD BODY -->
-        </div><!-- END CARD -->
-      </div><!-- END COL -->
-    <div class="row">
-      <div class="col">
+          </div>
+          <!-- END CARD BODY -->
+        </div>
+        <!-- END CARD -->
+      </div>
+      <!-- END COL -->
+      <div class="row">
+        <div class="col">
           <div class="card my-5">
             <img class="card-img-top" src="images/mother.gif" alt="Motherboard">
             <div class="card-body">
               <h4 class="card-title">Upgrades</h4>
               <p class="card-text">Computer feeling sluggish?</p>
               <a href="#" class="btn btn-primary">Check out our upgrade options!</a>
-            </div><!-- END CARD BODY -->
-          </div><!-- END CARD -->
-        </div><!-- END COL -->
+            </div>
+            <!-- END CARD BODY -->
+          </div>
+          <!-- END CARD -->
+        </div>
+        <!-- END COL -->
         <div class="col">
           <div class="card my-5">
             <img class="card-img-top" src="images/storageMedia.gif" alt="Storage Media">
             <div class="card-body">
               <h4 class="card-title">Storage</h4>
-              <p class="card-text">Do you need a safe place to keep your files? Why not with us? Become a vip member and get 1TB of storage on us.</p>
+              <p class="card-text">Do you need a safe place to keep your files? Why not with us? Become a vip member and get 1TB of storage on
+                us.</p>
               <a href="#" class="btn btn-primary">Check out our storage!</a>
-            </div><!-- END CARD BODY -->
-          </div><!-- END CARD -->
-        </div><!-- END COL -->
+            </div>
+            <!-- END CARD BODY -->
+          </div>
+          <!-- END CARD -->
+        </div>
+        <!-- END COL -->
         <div class="col my-5">
           <div class="card">
             <img class="card-img-top" src="images/tablet.gif" alt="tablet on desk">
@@ -135,21 +183,31 @@
               <h4 class="card-title">Set-ups</h4>
               <p class="card-text">Technology is changing fast. Setting up a new computer is diffrent then what it used to be.</p>
               <a href="#" class="btn btn-primary">Let us help!</a>
-            </div><!-- END CARD BODY -->
-          </div><!-- END CARD -->
-        </div><!-- END COL -->
-      </div><!-- END ROW -->
-    </div><!-- END ROW (CARDS)-->
+            </div>
+            <!-- END CARD BODY -->
+          </div>
+          <!-- END CARD -->
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </div>
+    <!-- END ROW (CARDS)-->
     <div class="row my-5">
       <div class="col">
         <footer class="float-right mx-3">
           <p>Copyright &copy;2017 Fast Repairs Co. All Rights Reserved</p>
         </footer>
-      </div><!-- END COL -->
-    </div><!-- END ROW (FOOTER)-->
-  </div><!-- END CONTAINER FLUID (MAIN)-->
+      </div>
+      <!-- END COL -->
+    </div>
+    <!-- END ROW (FOOTER)-->
+  </div>
+  <!-- END CONTAINER FLUID (MAIN)-->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>

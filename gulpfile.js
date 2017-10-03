@@ -39,4 +39,10 @@ gulp.task('fa', function(){
     .pipe(gulp.dest("src/css"));
 });
 
-gulp.task('default', ['js', 'serve', 'fa', 'fonts']);
+// Move Normalize CSS to src/css
+gulp.task('norm', function(){
+  return gulp.src('node_modules/normalize.css/normalize.css')
+    .pipe(gulp.dest("src/css"));
+});
+
+gulp.task('default', ['js', 'serve', 'fa', 'fonts', 'norm']);
