@@ -20,37 +20,40 @@
     <div class="row" id="nav">
       <div class="col my-3">
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="#">
               <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
                   Fast Repairs LLC
             </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#home"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="services.html"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="testimonials.html"><i class="fa fa-comment-o" aria-hidden="true"></i>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#home"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonials.html"><i class="fa fa-comment-o" aria-hidden="true"></i>
                     Testimonials</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="faq.html"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- END OF CLASS NAV BAR -->
+        </nav>
+        <!-- END OF NAVIGATION -->
       </div>
       <!-- ENDING COL DIV -->
     </div>
@@ -59,11 +62,18 @@
     <!-- BELOW THIS COMMMENT STARTS THE HEADER OF THE WEBSITE -->
     <div class="row">
       <div class="col">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Home</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <div id="mainCarousel" class="carousel slide border border-dark rounded" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#mainCarousel" data-slide-to="1"></li>
-          <li data-target="#mainCarousel" data-slide-to="2"></li>
+          <ol class="carousel-indicators">
+            <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mainCarousel" data-slide-to="1"></li>
+            <li data-target="#mainCarousel" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -170,7 +180,8 @@
             <div class="card-body">
               <h4 class="card-title">Storage</h4>
               <p class="card-text">Do you need a safe place to keep your files? Why not with us? Become a vip member and get 1TB of storage on
-                us.</p>
+                us.
+              </p>
               <a href="#" class="btn btn-primary">Check out our storage!</a>
             </div>
             <!-- END CARD BODY -->
@@ -209,6 +220,7 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/tether.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 
