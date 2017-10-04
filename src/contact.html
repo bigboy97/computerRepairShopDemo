@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Fast Repairs | Services</title>
+    <title>Fast Repairs | Contact Us</title>
     <!-- BOOTSTRAP 4 BATA SYLESHEETS -->
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -37,7 +37,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
                             </li>
-                            <li class="nav-item dropdown active">
+                            <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="services.html">Offered Services</a>
@@ -52,8 +52,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="faq.html"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#contact"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -70,7 +70,7 @@
             <div class="col-md-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Services</li>
+                    <li class="breadcrumb-item active">Contact Us</li>
                 </ol>
             </div>
             <!-- END COL -->
@@ -81,7 +81,7 @@
             <div class="col-md-5" id="about">
                 <header>
                     <div class="text-center">
-                        <h1>Check Out What Services We Have</h1>
+                        <h1>We want to hear from you!</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <!-- END CLASS TEXT CENTER -->
@@ -93,43 +93,50 @@
             </div>
         </div>
         <!-- END ROW (HEADER)-->
+        <!--START CONTENT-->
         <div class="row">
-            <div class="col-md-12">
-                <section>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Service #</th>
-                                <th>Name</th>
-                                <th>Discription</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Basic Repairs</td>
-                                <td>Simple computer repairs like a broken screen, or bad battery</td>
-                                <td>$20 + Materials</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Software Setup and Install</td>
-                                <td>Pre-packaged software install and setup for users who are usure about the prosses</td>
-                                <td>$50 + Software + Appointment</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Questions</td>
-                                <td>Have a simple question about a computer related issue!</td>
-                                <td>Free</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="card">
+                    <form class="form-horizontal" action="#" method="get">
+                        <fieldset>
+                            <legend class="text-center pt-4">Contact us</legend>
+                            <hr>
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Name</label>
+                                <div class="col-md-9">
+                                    <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Email input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">Your E-mail</label>
+                                <div class="col-md-9">
+                                    <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Message body -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="message">Your message</label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Form actions -->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-paper-plane" aria-hidden="true"></i>Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
-
+        <!--END CONTENT-->
         <div class="row my-5">
             <div class="col-md-12">
                 <footer class="float-right mx-3">

@@ -7,7 +7,8 @@
   <title>Fast Repairs</title>
   <!-- BOOTSTRAP 4 BATA SYLESHEETS -->
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css"><!-- SOMTHING I ADDED TO MESS AROUND WITH -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <!-- SOMTHING I ADDED TO MESS AROUND WITH -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <!-- CUSTOM STYLE SHEETS-->
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -36,8 +37,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="about.html"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="services.html">Offered Services</a>
+                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                  <a class="dropdown-item" href="register.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="testimonials.html"><i class="fa fa-comment-o" aria-hidden="true"></i>
@@ -69,7 +75,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <div id="mainCarousel" class="carousel slide border border-dark rounded" data-ride="carousel">
+        <div id="mainCarousel" class="carousel" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#mainCarousel" data-slide-to="1"></li>
@@ -162,61 +168,60 @@
       <!-- END COL -->
     </div>
     <!-- END ROW -->
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card my-5">
-            <img class="card-img-top" src="images/mother.gif" alt="Motherboard">
-            <div class="card-body">
-              <h4 class="card-title">Upgrades</h4>
-              <p class="card-text">Computer feeling sluggish?</p>
-              <a href="#" class="btn btn-primary">Check out our upgrade options!</a>
-            </div>
-            <!-- END CARD BODY -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card my-5">
+          <img class="card-img-top" src="images/mother.gif" alt="Motherboard">
+          <div class="card-body">
+            <h4 class="card-title">Upgrades</h4>
+            <p class="card-text">Computer feeling sluggish?</p>
+            <a href="#" class="btn btn-primary">Check out our upgrade options!</a>
           </div>
-          <!-- END CARD -->
+          <!-- END CARD BODY -->
         </div>
-        <!-- END COL -->
-        <div class="col-md-4">
-          <div class="card my-5">
-            <img class="card-img-top" src="images/storageMedia.gif" alt="Storage Media">
-            <div class="card-body">
-              <h4 class="card-title">Storage</h4>
-              <p class="card-text">Do you need a safe place to keep your files? Why not with us? Become a vip member and get 1TB of storage on
-                us.
-              </p>
-              <a href="#" class="btn btn-primary">Check out our storage!</a>
-            </div>
-            <!-- END CARD BODY -->
-          </div>
-          <!-- END CARD -->
-        </div>
-        <!-- END COL -->
-        <div class="col-md-4 my-5">
-          <div class="card">
-            <img class="card-img-top" src="images/tablet.gif" alt="tablet on desk">
-            <div class="card-body">
-              <h4 class="card-title">Set-ups</h4>
-              <p class="card-text">Technology is changing fast. Setting up a new computer is diffrent then what it used to be.</p>
-              <a href="#" class="btn btn-primary">Let us help!</a>
-            </div>
-            <!-- END CARD BODY -->
-          </div>
-          <!-- END CARD -->
-        </div>
-        <!-- END COL -->
+        <!-- END CARD -->
       </div>
-      <!-- END ROW -->
-    </div>
-    <!-- END ROW (CARDS)-->
-    <div class="row my-5">
-      <div class="col-md-12">
-        <footer class="float-right mx-3">
-          <p>Copyright &copy;2017 Fast Repairs Co. All Rights Reserved</p>
-        </footer>
+      <!-- END COL -->
+      <div class="col-md-4">
+        <div class="card my-5">
+          <img class="card-img-top" src="images/storageMedia.gif" alt="Storage Media">
+          <div class="card-body">
+            <h4 class="card-title">Storage</h4>
+            <p class="card-text">Do you need a safe place to keep your files? Why not with us? Become a vip member and get 1TB of storage on us.
+            </p>
+            <a href="#" class="btn btn-primary">Check out our storage!</a>
+          </div>
+          <!-- END CARD BODY -->
+        </div>
+        <!-- END CARD -->
+      </div>
+      <!-- END COL -->
+      <div class="col-md-4 my-5">
+        <div class="card">
+          <img class="card-img-top" src="images/tablet.gif" alt="tablet on desk">
+          <div class="card-body">
+            <h4 class="card-title">Set-ups</h4>
+            <p class="card-text">Technology is changing fast. Setting up a new computer is diffrent then what it used to be.</p>
+            <a href="#" class="btn btn-primary">Let us help!</a>
+          </div>
+          <!-- END CARD BODY -->
+        </div>
+        <!-- END CARD -->
       </div>
       <!-- END COL -->
     </div>
-    <!-- END ROW (FOOTER)-->
+    <!-- END ROW -->
+  </div>
+  <!-- END ROW (CARDS)-->
+  <div class="row my-5">
+    <div class="col-md-12">
+      <footer class="float-right mx-3">
+        <p>Copyright &copy;2017 Fast Repairs Co. All Rights Reserved</p>
+      </footer>
+    </div>
+    <!-- END COL -->
+  </div>
+  <!-- END ROW (FOOTER)-->
   </div>
   <!-- END CONTAINER FLUID (MAIN)-->
   <script type="text/javascript" src="js/jquery.min.js"></script>

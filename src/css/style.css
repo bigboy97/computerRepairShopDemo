@@ -1,5 +1,6 @@
 [class~=card] {
-  box-shadow: 50px 50px 50px #888888; }
+  box-shadow: 50px 50px 50px #888888;
+  border: solid thin black; }
 
 body {
   position: relative; }
@@ -21,3 +22,19 @@ body {
 
 i {
   margin-right: 5px; }
+
+[class~=panel-heading] {
+  background: white;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(lightblue, white);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(lightblue, white);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(lightblue, white);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(lightblue, white);
+  /* Standard syntax */ }
+
+[class~=carousel] {
+  border: thick solid black;
+  border-radius: 10px; }
