@@ -1,9 +1,9 @@
 [class~=card] {
   box-shadow: 50px 50px 50px #888888;
   border: solid thin black; }
-
-body {
-  position: relative; }
+/* 
+/* body {
+  position: relative; } */ */
 
 #blueBar {
   height: 20px; }

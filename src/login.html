@@ -40,12 +40,12 @@
                                 <a class="nav-link" href="about.html">
                                     <i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
                             </li>
-                            <li class="nav-item dropdown active">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="services.html">Offered Services</a>
-                                    <a class="dropdown-item" href="login.html">
+                                    <a class="dropdown-item active" href="login.html">
                                         <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
                                     <a class="dropdown-item" href="register.html">
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
@@ -83,7 +83,10 @@
                     <li class="breadcrumb-item">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-item active">Services</li>
+                    <li class="breadcrumb-item">
+                        <a href="services.html">Services</a>
+                    </li>
+                    <li class="breadcrumb-item active">Login</li>
                 </ol>
             </div>
             <!-- END COL -->
@@ -94,8 +97,8 @@
             <div class="col-md-5" id="about">
                 <header>
                     <div class="text-center">
-                        <h1>Check Out What Services We Have</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h1>Hi there!</h1>
+                        <p>Please login to access our services!</p>
                     </div>
                     <!-- END CLASS TEXT CENTER -->
                 </header>
@@ -107,38 +110,24 @@
         </div>
         <!-- END ROW (HEADER)-->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <section>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Service #</th>
-                                <th>Name</th>
-                                <th>Discription</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Basic Repairs</td>
-                                <td>Simple computer repairs like a broken screen, or bad battery</td>
-                                <td>$20 + Materials</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Software Setup and Install</td>
-                                <td>Pre-packaged software install and setup for users who are usure about the prosses</td>
-                                <td>$50 + Software + Appointment</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Questions</td>
-                                <td>Have a simple question about a computer related issue!</td>
-                                <td>Free</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form>
+                        <div class="form-group">
+                            <label for="userName">User Name</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Example: bill324">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="">
+                        </div>
+                    </form>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <input type="submit" value="Submit">
                 </section>
             </div>
         </div>
@@ -159,6 +148,7 @@
     <script type="text/javascript" src="js/tether.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 
 </html>
