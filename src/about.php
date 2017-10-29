@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -31,29 +33,41 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#about"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
+                <a class="nav-link dropdown-toggle" href="services.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="services.html">Offered Services</a>
-                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
-                  <a class="dropdown-item" href="register.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                  <a class="dropdown-item" href="services.php">Offered Services</a>
+                  <a class="dropdown-item" href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                  <a class="dropdown-item" href="register.php"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="testimonials.html"><i class="fa fa-comment-o" aria-hidden="true"></i>
+                <a class="nav-link" href="testimonials.php"><i class="fa fa-comment-o" aria-hidden="true"></i>
                     Testimonials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="faq.html"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
+                <a class="nav-link" href="faq.php"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
+                <a class="nav-link" href="contact.php"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
               </li>
+<?php
+if (isset($_SESSION['user'])) {
+echo <<<HTML
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-male" aria-hidden="true"></i>Welcome "$_SESSION[user]"!</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<a class="dropdown-item" href="php/logOut.php"><i class="fa fa-minus-square-o" aria-hidden="true"></i>Logout</a>
+</div>
+</li>
+HTML;
+  }
+?>
             </ul>
           </div>
           <!-- END OF CLASS NAV BAR -->
@@ -68,7 +82,7 @@
     <div class="row">
       <div class="col-md-12">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
           <li class="breadcrumb-item active">About</li>
         </ol>
       </div>

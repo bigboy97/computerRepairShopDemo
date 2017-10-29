@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -31,39 +33,51 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">
+                                <a class="nav-link" href="index.php">
                                     <i class="fa fa-home" aria-hidden="true"></i>Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">
+                                <a class="nav-link" href="about.php">
                                     <i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="services.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="services.html">Offered Services</a>
-                                    <a class="dropdown-item active" href="login.html">
+                                    <a class="dropdown-item" href="services.php">Offered Services</a>
+                                    <a class="dropdown-item active" href="login.php">
                                         <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
-                                    <a class="dropdown-item" href="register.html">
+                                    <a class="dropdown-item" href="register.php">
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="testimonials.html">
+                                <a class="nav-link" href="testimonials.php">
                                     <i class="fa fa-comment-o" aria-hidden="true"></i>
                                     Testimonials</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="faq.html">
+                                <a class="nav-link" href="faq.php">
                                     <i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">
+                                <a class="nav-link" href="contact.php">
                                     <i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
                             </li>
+<?php
+if (isset($_SESSION['user'])) {
+echo <<<HTML
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-male" aria-hidden="true"></i>Welcome "$_SESSION[user]"!</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<a class="dropdown-item" href="php/logOut.php"><i class="fa fa-minus-square-o" aria-hidden="true"></i>Logout</a>
+</div>
+</li>
+HTML;
+  }
+?>
                         </ul>
 
                     </div>
@@ -81,10 +95,10 @@
             <div class="col-md-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="services.html">Services</a>
+                        <a href="services.php">Services</a>
                     </li>
                     <li class="breadcrumb-item active">Register</li>
                 </ol>
@@ -112,35 +126,30 @@
         <div class="row">
             <div class="col-md-6">
                 <section>
-                    <form>
+                    <form method="get" action="php/addNewUser.php">
                         <div class="form-group">
                             <label for="userName">User Name</label>
-                            <input type="text" class="form-control" id="userName" placeholder="Example: jane91">
+                            <input type="text" class="form-control" id="userName" name="userName" placeholder="Example: jane91">
                         </div>
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Morgan Freed">
+                            <input type="text" class="form-control" id="name" name="fullName" placeholder="Morgan Freed">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="">
+                            <input type="password" class="form-control" id="password" name="userInputedPassword" placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="passwordTwo">Re-type Password</label>
-                            <input type="password" class="form-control" id="passwordTwo" placeholder="">
+                            <input type="password" class="form-control" id="passwordTwo" name="userInputedPasswordTwo" placeholder="">
                         </div>
                         <div class="form-group">
                             <label for="Email">Email</label>
-                            <input type="email" class="form-control" id="Email" placeholder="example@example.com">
+                            <input type="email" class="form-control" id="Email" name="userEmail" placeholder="example@example.com">
                         </div>
+                        <input type="submit" value="Submit">
                     </form>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <input type="submit" value="Submit">
-                </section>
             </div>
         </div>
 

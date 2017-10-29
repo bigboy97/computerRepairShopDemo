@@ -1,3 +1,17 @@
+<?php session_start();
+include 'php/config.php';
+$dataBaseQuery = "SELECT * FROM comments";
+$results = mysqli_query($connection ,$dataBaseQuery);
+$h1 = array();
+$ph = array();
+while($row = mysqli_fetch_assoc($results))
+{
+    $title = $row['user_comment_heading'];
+    array_push($h1, $title);
+    $content = $row['user_comment'];
+    array_push($ph, $content);
+}
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -32,17 +46,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
+                                <a class="nav-link" href="about.php"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
                             </li>
                             <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
+                              <a class="nav-link dropdown-toggle" href="services.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="services.html">Offered Services</a>
-                                <a class="dropdown-item" href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
-                                <a class="dropdown-item" href="register.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                                <a class="dropdown-item" href="services.php">Offered Services</a>
+                                <a class="dropdown-item" href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                                <a class="dropdown-item" href="register.php"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
                               </div>
                             </li>
                             <li class="nav-item active">
@@ -50,11 +64,23 @@
                     Testimonials</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="faq.html"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
+                                <a class="nav-link" href="faq.php"><i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
+                                <a class="nav-link" href="contact.php"><i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
                             </li>
+<?php
+if (isset($_SESSION['user'])) {
+echo <<<HTML
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-male" aria-hidden="true"></i>Welcome "$_SESSION[user]"!</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<a class="dropdown-item" href="php/logOut.php"><i class="fa fa-minus-square-o" aria-hidden="true"></i>Logout</a>
+</div>
+</li>
+HTML;
+}
+?>
                         </ul>
                     </div>
                     <!-- END OF CLASS NAV BAR -->
@@ -69,7 +95,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item active">Testimonials</li>
                 </ol>
             </div>
@@ -97,10 +123,10 @@
             <div class="col-sm-3">
                 <div class="card">
                     <div class="card-block px-4 py-4">
-                        <h4 class="card-title">Great People</h4>
+                        <h4 class="card-title"><?php echo($h1[0]); ?></h4>
                         <h6 class="card-subtitle mb-2 text-muted">By Nick</h6>
                         <hr>
-                        <p class="card-text">They are always frendly</p>
+                        <p class="card-text"><?php echo($ph[0]); ?></p>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Thumbs up</a>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Thumbs down</a>
                     </div>
@@ -109,11 +135,10 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-block px-4 py-4">
-                        <h4 class="card-title">They are FAST</h4>
+                        <h4 class="card-title"><?php echo($h1[1]); ?></h4>
                         <h6 class="card-subtitle mb-2 text-muted">By Lisa</h6>
                         <hr>
-                        <p class="card-text">I stoped by to ask for help setting up my new computer. I was in and out in only an hour. They were
-                            verry helpfull in explaining how to work some of the features</p>
+                        <p class="card-text"><?php echo($ph[1]); ?></p>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Thumbs up</a>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Thumbs down</a>
                     </div>
@@ -122,10 +147,10 @@
             <div class="col-sm-5">
                 <div class="card">
                     <div class="card-block px-4 py-4">
-                        <h4 class="card-title">Was Not Impressed</h4>
+                        <h4 class="card-title"><?php echo($h1[2]); ?><</h4>
                         <h6 class="card-subtitle mb-2 text-muted">By John</h6>
                         <hr>
-                        <p class="card-text">I was in later in the afternoon, and waited almost an hour to meet with somone. They looked to be understaffed on weenends.</p>
+                        <p class="card-text"><?php echo($ph[2]); ?></p>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Thumbs up</a>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Thumbs down</a>
                     </div>
@@ -136,10 +161,10 @@
             <div class="col-sm-3">
                 <div class="card">
                     <div class="card-block px-4 py-4">
-                        <h4 class="card-title">There Store Could Better</h4>
+                        <h4 class="card-title"><?php echo($h1[3]); ?></h4>
                         <h6 class="card-subtitle mb-2 text-muted">By Jerry</h6>
                         <hr>
-                        <p class="card-text">I was in for the first time, and did not like it.</p>
+                        <p class="card-text"><?php echo($ph[3]); ?></p>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Thumbs up</a>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Thumbs down</a>
                     </div>
@@ -148,10 +173,10 @@
             <div class="col-sm-3">
                 <div class="card">
                     <div class="card-block px-4 py-4">
-                        <h4 class="card-title">I Liked It</h4>
+                        <h4 class="card-title"><?php echo($h1[4]); ?></h4>
                         <h6 class="card-subtitle mb-2 text-muted">By Lisa</h6>
                         <hr>
-                        <p class="card-text">I thought this is a good idea to have in this town!</p>
+                        <p class="card-text"><?php echo($ph[4]); ?></p>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Thumbs up</a>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Thumbs down</a>
                     </div>
@@ -160,10 +185,10 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-block px-4 py-4">
-                        <h4 class="card-title">Ready To Come Back</h4>
+                        <h4 class="card-title"><?php echo($h1[5]); ?></h4>
                         <h6 class="card-subtitle mb-2 text-muted">By Rowen</h6>
                         <hr>
-                        <p class="card-text">I always have questions about my computer. I am deffently comming back!</p>
+                        <p class="card-text"><?php echo($ph[5]); ?></p>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Thumbs up</a>
                         <a href="#" class="card-link"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Thumbs down</a>
                     </div>

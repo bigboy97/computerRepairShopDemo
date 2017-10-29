@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -31,39 +33,51 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">
+                                <a class="nav-link" href="index.php">
                                     <i class="fa fa-home" aria-hidden="true"></i>Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">
+                                <a class="nav-link" href="about.php">
                                     <i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
                             </li>
-                            <li class="nav-item dropdown active">
-                                <a class="nav-link dropdown-toggle" href="services.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="services.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-handshake-o" aria-hidden="true"></i>Services</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="services.html">Offered Services</a>
-                                    <a class="dropdown-item" href="login.html">
+                                    <a class="dropdown-item" href="services.php">Offered Services</a>
+                                    <a class="dropdown-item active" href="login.php">
                                         <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
-                                    <a class="dropdown-item" href="register.html">
+                                    <a class="dropdown-item" href="register.php">
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="testimonials.html">
+                                <a class="nav-link" href="testimonials.php">
                                     <i class="fa fa-comment-o" aria-hidden="true"></i>
                                     Testimonials</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="faq.html">
+                                <a class="nav-link" href="faq.php">
                                     <i class="fa fa-users" aria-hidden="true"></i>FAQ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">
+                                <a class="nav-link" href="contact.php">
                                     <i class="fa fa-envelope-open" aria-hidden="true"></i>Contact Us</a>
                             </li>
+<?php
+if (isset($_SESSION['user'])) {
+echo <<<HTML
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-male" aria-hidden="true"></i>Welcome "$_SESSION[user]"!</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<a class="dropdown-item" href="php/logOut.php"><i class="fa fa-minus-square-o" aria-hidden="true"></i>Logout</a>
+</div>
+</li>
+HTML;
+  }
+?>
                         </ul>
 
                     </div>
@@ -81,9 +95,12 @@
             <div class="col-md-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
-                    <li class="breadcrumb-item active">Services</li>
+                    <li class="breadcrumb-item">
+                        <a href="services.php">Services</a>
+                    </li>
+                    <li class="breadcrumb-item active">Login</li>
                 </ol>
             </div>
             <!-- END COL -->
@@ -94,8 +111,8 @@
             <div class="col-md-5" id="about">
                 <header>
                     <div class="text-center">
-                        <h1>Check Out What Services We Have</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h1>Hi there!</h1>
+                        <p>Please login to access our services!</p>
                     </div>
                     <!-- END CLASS TEXT CENTER -->
                 </header>
@@ -107,40 +124,22 @@
         </div>
         <!-- END ROW (HEADER)-->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <section>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Service #</th>
-                                <th>Name</th>
-                                <th>Discription</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Basic Repairs</td>
-                                <td>Simple computer repairs like a broken screen, or bad battery</td>
-                                <td>$20 + Materials</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Software Setup and Install</td>
-                                <td>Pre-packaged software install and setup for users who are usure about the prosses</td>
-                                <td>$50 + Software + Appointment</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Questions</td>
-                                <td>Have a simple question about a computer related issue!</td>
-                                <td>Free</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+                    <form method="get" action="php/loginAction.php">
+                        <div class="form-group">
+                            <label for="userName">User Name</label>
+                            <input type="text" class="form-control" id="userName" name="userName" placeholder="Example: bill324">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="userInputedPassword" placeholder="">
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+
             </div>
+        </div>
         </div>
 
         <div class="row my-5">
@@ -159,6 +158,7 @@
     <script type="text/javascript" src="js/tether.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 
 </html>

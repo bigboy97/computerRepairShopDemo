@@ -10,4 +10,4 @@ $('.carousel').carousel({
   //Init tooltips
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
-  })
+  });
